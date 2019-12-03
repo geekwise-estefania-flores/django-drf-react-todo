@@ -1,4 +1,5 @@
-from django.contrib.auth.models import User, Group, Todo
+from django.contrib.auth.models import User, Group
+from .models import Todo
 from rest_framework import serializers
 
 
