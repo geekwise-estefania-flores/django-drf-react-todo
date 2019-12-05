@@ -1,8 +1,9 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import Modal from "./components/Modal";
 import axios from "axios";
 
 class App extends Component {
+    async asyncMethod() {
       constructor(props) {
         super(props);
         this.state = {
@@ -141,4 +142,6 @@ class App extends Component {
         );
       }
     }
+}
+
     export default App;
