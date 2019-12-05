@@ -20,7 +20,7 @@ class App extends Component {
       }
       refreshList = () => {
         axios
-          .get("https://8000-a4e6c3d4-5f88-4ee9-a45e-662be3d3372e.ws-us02.gitpod.io/api/todos/")
+          .get("https://django-drf-react-todo-1.herokuapp.com/api/todos/")
           .then(res => this.setState({ todoList: res.data.results }))
           .catch(err => console.log(err));
       };
@@ -91,17 +91,17 @@ class App extends Component {
         this.toggle();
         if (item.id) {
           axios
-            .put(`https://8000-a4e6c3d4-5f88-4ee9-a45e-662be3d3372e.ws-us02.gitpod.io/api/todos/${item.id}/`, item)
+            .put(`https://django-drf-react-todo-1.herokuapp.com/api/todos/${item.id}/`, item)
             .then(res => this.refreshList());
           return;
         }
         axios
-          .post("https://8000-a4e6c3d4-5f88-4ee9-a45e-662be3d3372e.ws-us02.gitpod.io/api/todos/", item)
+          .post("https://django-drf-react-todo-1.herokuapp.com/api/todos/", item)
           .then(res => this.refreshList());
       };
       handleDelete = item => {
         axios
-          .delete(`https://8000-a4e6c3d4-5f88-4ee9-a45e-662be3d3372e.ws-us02.gitpod.io/api/todos/${item.id}/`)
+          .delete(`https://django-drf-react-todo-1.herokuapp.com/api/todos/${item.id}/`)
           .then(res => this.refreshList());
       };
       createItem = () => {
