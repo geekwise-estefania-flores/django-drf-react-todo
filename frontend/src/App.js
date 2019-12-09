@@ -3,7 +3,6 @@ import Modal from "./components/Modal";
 import axios from "axios";
 
 class App extends Component {
-    async asyncMethod() {
       constructor(props) {
         super(props);
         this.state = {
@@ -20,10 +19,12 @@ class App extends Component {
         this.refreshList();
       }
       refreshList = () => {
+        async function asyncFunc () {
         axios
           .get("https://django-drf-react-todo-1.herokuapp.com/api/todos/")
           .then(res => this.setState({ todoList: res.data.results }))
           .catch(err => console.log(err));
+        }
       };
       displayCompleted = status => {
         if (status) {
@@ -140,7 +141,6 @@ class App extends Component {
             ) : null}
           </main>
         );
-      }
     }
 }
 
